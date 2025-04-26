@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepGuard | AI Deepfake Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shield-shaded"></i> DeepGuard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#detection">Detection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAoHBwkHBgoJCAkKLQp...'); background-size: cover; background-position: center;">
+        <div class="container text-center py-5" style="background-color: rgba(0, 0, 0, 0.5); color: white;">
+            <h1 class="display-4 fw-bold">Protect Yourself from Deepfakes</h1>
+            <p class="lead">Advanced AI detection for images, audio, and videos with authenticity certificates</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Deepfake Detection Section -->
+            <div class="col-lg-12" id="detection">
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body">
+                        <h2 class="card-title"><i class="bi bi-camera"></i> Deepfake Detection</h2>
+                        <p class="card-text">Upload an image, audio, or video to check for AI manipulation</p>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div id="uploadContent">
+                                <i class="bi bi-cloud-arrow-up" style="font-size: 3rem;"></i>
+                                <h4>Drag & Drop your file here</h4>
+                                <p>or click to browse files</p>
+                                <p class="text-muted">Supports: JPEG, PNG, MP3, WAV, MP4, AVI</p>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*,audio/*,video/*" style="display: none;">
+                        </div>
+
+                        <div class="loading text-center my-4" id="loadingIndicator" style="display: none;">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p>Analyzing file for deepfake indicators...</p>
+                        </div>
+
+                        <div class="result-card" id="resultCard" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Analysis Result</h3>
+                                    <div id="resultText" class="h4 mb-3"></div>
+                                    <div class="mb-3">
+                                        <strong>Confidence:</strong>
+                                        <span id="confidenceValue"></span>%
+                                        <div class="confidence-meter bg-light">
+                                            <div id="confidenceBar" class="meter-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div id="explanation"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img id="previewImage" class="img-fluid rounded" style="display: none;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="bg-light py-5" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>About DeepGuard</h2>
+                    <p>DeepGuard uses advanced AI to detect deepfakes in images, audio, and videos, providing authenticity certificates for verified content.</p>
+                    <p>Our platform helps combat AI-generated misinformation by offering:</p>
+                    <ul>
+                        <li>Deepfake detection algorithms</li>
+                        <li>Authenticity certificates</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3>How It Works</h3>
+                            <div class="how-it-works-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>Upload Content</h5>
+                                    <p>Submit images, audio, or videos for analysis</p>
+                                </div>
+                            </div>
+                            <div class="how-it-works-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>AI Analysis</h5>
+                                    <p>Our models detect manipulation indicators</p>
+                                </div>
+                            </div>
+                            <div class="how-it-works-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>Get Certificate</h5>
+                                    <p>Receive an authenticity certificate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DeepGuard</h5>
+                    <p>Combating deepfakes with AI technology.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope"></i> contact@deepguard.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <small>© 2023 DeepGuard. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
